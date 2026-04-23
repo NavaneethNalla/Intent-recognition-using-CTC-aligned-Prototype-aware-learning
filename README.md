@@ -24,3 +24,37 @@ To prevent the model from being distracted by local noise (like a blurry video f
 Instead of just learning boundaries between classes, the model learns a "Prototype"—an ideal mathematical center—for every intent (e.g., Gratefulness, Complaint). 
 - Semantic Grounding: By aligning fused features with these prototypes, the model develops a stable understanding of what each intent looks and sounds like.
 - Rare-Class Robustness: This is powerful for intents with limited training data, as the prototype provides a fixed target for the model to aim for, preventing it from getting lost in high-dimensional space.
+
+
+The dataset used in this project is **entirely self-created** and designed for intent recognition in real-world human-computer interaction scenarios. It consists of **300 annotated samples**, each representing a short segment of a video.
+
+Each sample is organized using a combination of structured metadata and corresponding media files:
+
+### 1. Metadata (Excel File)
+The dataset includes an Excel sheet where each row corresponds to a single sample with the following fields:
+* **ID:** Unique identifier for each sample
+* **Start Time:** Start timestamp of the segment in the video
+* **End Time:** End timestamp of the segment
+* **Text:** Transcription of the spoken content (in Hindi and Hinglish)
+* **Label:** Annotated intent of the sample
+
+---
+
+### 2. Video Data
+A folder containing video clips for each sample:
+* Each file is named using its corresponding ID from the Excel sheet
+
+---
+
+### 3. Audio Data
+A folder containing extracted audio files:
+* Each audio file corresponds to a video sample
+* File names match the ID in the metadata
+
+---
+
+### Data Alignment
+All components of the dataset are linked through the **unique ID**, ensuring seamless mapping between:
+* Metadata (Excel)
+* Video files
+* Audio files
